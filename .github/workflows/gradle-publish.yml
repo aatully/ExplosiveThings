@@ -14,11 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run cibuild script
-        id: exec
-        run: ./scripts/cibuild
-
-      - name: Cleanup Gradle Cache
+      - name: Gradle Build
         run: |
           sudo gradle build
       - name: Upload the built artifact
