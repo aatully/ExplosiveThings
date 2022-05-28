@@ -21,12 +21,12 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: ExplosiveThings.jar
-          path: build/libs/explosivethings-1.0-SNAPSHOT
+          path: build/libs/explosivethings-1.0-SNAPSHOT.jar
           if-no-files-found: error
 
-      - name: Create release if this is a tagged workflow
+      - name: Create release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: build/libs/explosivethings-1.0-SNAPSHOT
+          artifacts: build/libs/explosivethings-1.0-SNAPSHOT.jar
           name: "ExplosiveThings Mod for minecraft: 1.16.5"
           token: ${{ secrets.GITHUB_TOKEN }}
