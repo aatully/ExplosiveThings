@@ -14,36 +14,23 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Caches Gradle dependencies and wrappers
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.gradle/caches/modules-2
-            ~/.gradle/caches/forge_gradle
-            ~/.gradle/wrapper/dists
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle', '**/libs.versions.toml', '**/gradle/wrapper/gradle-wrapper.properties') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
       - name: Run cibuild script
         id: exec
         run: ./scripts/cibuild
 
       - name: Cleanup Gradle Cache
         run: |
-          sudo rm -f ~/.gradle/caches/modules-2/modules-2.lock
-          sudo rm -f ~/.gradle/caches/modules-2/gc.properties
+          sudo gradle build
       - name: Upload the built artifact
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ steps.exec.outputs.jar }}
-          path: build/libs/${{ steps.exec.outputs.jar }}
+          name: ExplosiveThings.jar
+          path: build/libs/explosivethings-1.0-SNAPSHOT
           if-no-files-found: error
 
       - name: Create release if this is a tagged workflow
         uses: ncipollo/release-action@v1
-        if: startsWith(github.ref, 'refs/tags/')
         with:
-          artifacts: build/libs/${{ steps.exec.outputs.jar }}
-          name: ForgeHax ${{ steps.exec.outputs.version }} for Minecraft ${{ steps.exec.outputs.mcversion }}
-          body: ${{ steps.exec.outputs.changelog }}
+          artifacts: build/libs/explosivethings-1.0-SNAPSHOT
+          name: "ExplosiveThings Mod for minecraft: 1.16.5"
           token: ${{ secrets.GITHUB_TOKEN }}
