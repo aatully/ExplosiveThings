@@ -25,10 +25,9 @@ jobs:
           if-no-files-found: error
 
       - name: Create release
-        uses: actions/create-release@v1
+        uses: softprops/action-gh-release@v1
         with:
-          release_name: "ExplosiveThings Mod for minecraft: 1.16.5"
-          body_path: build/libs/explosivethings-1.0-SNAPSHOT.jar
-          tag_name: ${{ github.ref }}
+          name: "ExplosiveThings Mod for minecraft: 1.16.5"
+          files: build/libs/explosivethings-1.0-SNAPSHOT.jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
