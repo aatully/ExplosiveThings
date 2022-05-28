@@ -23,10 +23,15 @@ jobs:
           name: ExplosiveThings.jar
           path: build/libs/explosivethings-1.0-SNAPSHOT.jar
           if-no-files-found: error
-
+      - name: push tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Create release
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: ${{ steps.tag_version.outputs.new_tag }}
           name: "ExplosiveThings Mod for minecraft: 1.16.5"
           files: build/libs/explosivethings-1.0-SNAPSHOT.jar
         env:
