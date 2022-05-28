@@ -1,0 +1,46 @@
+# The name of the mod loader type to load - for regular FML @Mod mods it should be javafml
+modLoader="javafml"
+# A version range to match for said mod loader - for regular FML @Mod it will be the forge version
+# Forge for 1.18 is version 38
+loaderVersion="[36,)"
+# The license for your mod. This is mandatory and allows for easier comprehension of your redistributive properties.
+# Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
+license="All Rights Reserved"
+# A URL to refer people to when problems occur with this mod
+issueTrackerURL=""
+# If the mods defined in this file should show as separate resource packs
+showAsResourcePack=false
+
+[[mods]]
+modId="explosivethings"
+version="1.0.0.0"
+displayName="Explosive Things"
+updateJSONURL=""
+displayURL=""
+logoFile="logo.png"
+credits="Agradeça a Space_Interprise"
+authors="Tully"
+description='''
+Nesse mod sempre existe a probabilidade de algo explodir, seja
+ algum item, armadura ou até mesmo apenas a sua mão vazia, com a mão vazia sempre
+ existe 15% de você explodir, faça itens melhores para diminuir essa porcentagem, afinal
+ as coisas só explodem quando algo quebra, ou seja, itens com maior durabilidade, tem menos
+ chance de explodir.
+
+ obs: a durabilidade dos itens é um valor aleátorio entre 1 e o valor padrão, que é aleatorizado
+ apenas uma vez.
+  '''
+
+[[dependencies.explosivethings]]
+modId="forge"
+mandatory=true
+versionRange="[36,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.explosivethings]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.16,)"
+ordering="NONE"
+side="BOTH"

@@ -1,0 +1,14 @@
+[
+  {
+    "modid": "explosivethings",
+    "name": "Explosive Things",
+    "description": "Nesse mod sempre existe a probabilidade de algo explodir, seja\n algum item, armadura ou até mesmo apenas a sua mão vazia, com a mão vazia sempre\n existe 15% de você explodir, faça itens melhores para diminuir essa porcentagem, afinal\n as coisas só explodem quando algo quebra, ou seja, itens com maior durabilidade, tem menos\n chance de explodir.\n \n obs: a durabilidade dos itens é um valor aleátorio entre 1 e o valor padrão, que é aleatorizado\n apenas uma vez.",
+    "version": "1.0.0",
+    "mcversion": "1.16.5",
+    "authorList": ["Tully"],
+  "credits": "Agradeça a Space_Interprise",
+  "logoFile": "logo.png",
+  "screenshots": [],
+  "dependencies": []
+  }
+]
